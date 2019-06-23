@@ -1,0 +1,5 @@
+<div class="parent">
+  Parent: {{message}}
+  <app-child [message]="message" (messageEvent)="recieveMessage($event)"></app-child>
+  <button (click)="changeText()">Change Text</button>
+</div>
