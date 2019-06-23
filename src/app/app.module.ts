@@ -9,6 +9,8 @@ import { ComponentCommunicationComponent } from './component-communication/compo
 import { ParentComponent } from './component-communication/parent/parent.component';
 import { ChildComponent } from './component-communication/parent/child/child.component';
 import { SiblingComponent } from './component-communication/sibling/sibling.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,13 @@ import { SiblingComponent } from './component-communication/sibling/sibling.comp
     ChildComponent,
     SiblingComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
