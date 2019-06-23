@@ -11,7 +11,14 @@ import { ChildComponent } from './component-communication/parent/child/child.com
 import { SiblingComponent } from './component-communication/sibling/sibling.component';
 
 @NgModule({
-  declarations: [AppComponent, GetDataFromUrlComponent, ComponentCommunicationComponent, ParentComponent, ChildComponent, SiblingComponent],
+  declarations: [
+    AppComponent,
+    GetDataFromUrlComponent,
+    ComponentCommunicationComponent,
+    ParentComponent,
+    ChildComponent,
+    SiblingComponent
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

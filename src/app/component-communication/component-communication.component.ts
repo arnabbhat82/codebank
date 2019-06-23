@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./component-communication.component.scss']
 })
 export class ComponentCommunicationComponent implements OnInit {
+  show: boolean;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
+  toggleSibling() {
+    this.show = !this.show;
   }
 
+  ngOnInit() {}
 }

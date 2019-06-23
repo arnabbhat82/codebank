@@ -1,2 +1,3 @@
 <p><app-parent></app-parent></p>
-<p><app-sibling></app-sibling></p>
+<button (click)="toggleSibling()">Toggle Sibling</button>
+<p><app-sibling *ngIf="show"></app-sibling></p>
