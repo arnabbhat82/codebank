@@ -9,21 +9,24 @@ import { ComponentCommunicationService } from '../component-communication.servic
 export class ParentComponent implements OnInit {
   message = 'Hello World';
 
-  constructor(private componentCommunicationService: ComponentCommunicationService) { }
+  constructor(
+    private componentCommunicationService: ComponentCommunicationService
+  ) {}
 
   changeText() {
     this.message = 'Parent to Child Communication';
     this.componentCommunicationService.siblingData.next(this.message);
   }
 
-  recieveMessage($event){
+  recieveMessage($event: string) {
     this.message = $event;
     this.componentCommunicationService.siblingData.next(this.message);
   }
 
   ngOnInit() {
-    this.componentCommunicationService.siblingData
-      .subscribe(data => this.message = data);
+    this.componentCommunicationService.siblingData.next(this.message);
+    this.componentCommunicationService.siblingData.subscribe(
+      data => (this.message = data)
+    );
   }
-
 }

@@ -7,15 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
   @Input() message: string;
-  childToParent = 'Child to Parent Data Sharing';
   @Output() messageEvent = new EventEmitter<string>();
+  childToParent: string;
 
-  constructor() { }
-  sendMessage(){
+  constructor() {}
+
+  sendMessage() {
     this.messageEvent.emit(this.childToParent);
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
