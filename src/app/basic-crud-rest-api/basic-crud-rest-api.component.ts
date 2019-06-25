@@ -10,7 +10,6 @@ import { Product } from './product.model';
 export class BasicCrudRestApiComponent implements OnInit {
   products: Product[];
   message: string;
-  newId: string;
 
   constructor(private productService: ProductService) {}
 
@@ -19,9 +18,7 @@ export class BasicCrudRestApiComponent implements OnInit {
   }
 
   onAdd() {
-    this.newId = Math.random() + 's';
     const newProduct: Product = {
-      _id: this.newId,
       name: 'Chocolate',
       price: 100,
       details: 'A chocolate product',
