@@ -1,22 +1,20 @@
 {{ message }}
-<button (click)="onAdd();">Add</button>
+<button (click)="onAdd()">Add</button>
 <table border="1">
-<thead>
-  <th>Name</th>
-  <th>Price</th>
-  <th>Details</th>
-  <th>Quantity</th>
-  <th>Update</th>
-  <th>Delete</th>
-</thead>
-<tr *ngFor="let product of products; index as i">
-  <td>{{ product.name }}</td>
-  <td>{{ product.price }}</td>
-  <td>{{ product.details}}</td>
-  <td>{{ product.quantityAvailable }}</td>
-  <td><button type="button" (click)="editProduct(i);">Update</button></td>
-  <td><button type="button" (click)="deleteProduct(i);">Delete</button></td>
-
-
-</tr>
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Details</th>
+    <th>Quantity</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </thead>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.details}}</td>
+    <td>{{ product.quantityAvailable }}</td>
+    <td><button type="button" (click)="editProduct(i)">Update</button></td>
+    <td><button type="button" (click)="deleteProduct(i)">Delete</button></td>
+  </tr>
 </table>

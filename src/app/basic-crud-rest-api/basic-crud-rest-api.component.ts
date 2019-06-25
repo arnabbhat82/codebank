@@ -17,6 +17,7 @@ export class BasicCrudRestApiComponent implements OnInit {
   ngOnInit() {
     this.productService.getProducts().subscribe(data => (this.products = data));
   }
+
   onAdd() {
     this.newId = Math.random() + 's';
     const newProduct: Product = {
@@ -30,6 +31,7 @@ export class BasicCrudRestApiComponent implements OnInit {
       .addProduct(newProduct)
       .subscribe(data => this.products.push(data));
   }
+
   editProduct(i: number) {
     const modifiedProduct: Product = {
       ...this.products[i],
@@ -40,6 +42,7 @@ export class BasicCrudRestApiComponent implements OnInit {
       this.message = data.message;
     });
   }
+
   deleteProduct(i: number) {
     this.productService.deleteProduct(this.products[i]._id).subscribe(data => {
       this.products.splice(i, 1);
