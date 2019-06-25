@@ -9,15 +9,41 @@ import { Product } from './product.model';
 })
 export class BasicCrudRestApiComponent implements OnInit {
   products: Product[];
+  message: string;
+  newId: string;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProducts()
-    .subscribe(data => this.products = data );
+    this.productService.getProducts().subscribe(data => (this.products = data));
   }
-  onAdd(){
-    console.log('aa');
+  onAdd() {
+    this.newId = Math.random() + 's';
+    const newProduct: Product = {
+      _id: this.newId,
+      name: 'Chocolate',
+      price: 100,
+      details: 'A chocolate product',
+      quantityAvailable: 20
+    };
+    this.productService
+      .addProduct(newProduct)
+      .subscribe(data => this.products.push(data));
   }
-
+  editProduct(i: number) {
+    const modifiedProduct: Product = {
+      ...this.products[i],
+      price: this.products[i].price + 10
+    };
+    this.productService.editProduct(modifiedProduct).subscribe(data => {
+      this.products[i] = modifiedProduct;
+      this.message = data.message;
+    });
+  }
+  deleteProduct(i: number) {
+    this.productService.deleteProduct(this.products[i]._id).subscribe(data => {
+      this.products.splice(i, 1);
+      this.message = data.message;
+    });
+  }
 }

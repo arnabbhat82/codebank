@@ -1,3 +1,4 @@
+{{ message }}
 <button (click)="onAdd();">Add</button>
 <table border="1">
 <thead>
@@ -13,7 +14,9 @@
   <td>{{ product.price }}</td>
   <td>{{ product.details}}</td>
   <td>{{ product.quantityAvailable }}</td>
-  <td>Update</td>
-  <td>Delete</td>
+  <td><button type="button" (click)="editProduct(i);">Update</button></td>
+  <td><button type="button" (click)="deleteProduct(i);">Delete</button></td>
+
+
 </tr>
 </table>
