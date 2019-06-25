@@ -1,0 +1,19 @@
+<button (click)="onAdd();">Add</button>
+<table border="1">
+<thead>
+  <th>Name</th>
+  <th>Price</th>
+  <th>Details</th>
+  <th>Quantity</th>
+  <th>Update</th>
+  <th>Delete</th>
+</thead>
+<tr *ngFor="let product of products; index as i">
+  <td>{{ product.name }}</td>
+  <td>{{ product.price }}</td>
+  <td>{{ product.details}}</td>
+  <td>{{ product.quantityAvailable }}</td>
+  <td>Update</td>
+  <td>Delete</td>
+</tr>
+</table>

@@ -11,6 +11,7 @@ import { ChildComponent } from './component-communication/parent/child/child.com
 import { SiblingComponent } from './component-communication/sibling/sibling.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { BasicCrudRestApiComponent } from './basic-crud-rest-api/basic-crud-rest-api.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MaterialModule } from './material.module';
     ComponentCommunicationComponent,
     ParentComponent,
     ChildComponent,
-    SiblingComponent
+    SiblingComponent,
+    BasicCrudRestApiComponent
   ],
   imports: [
     BrowserModule,
