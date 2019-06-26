@@ -43,6 +43,7 @@ export class BasicFormCrudComponent implements OnInit {
       this.objectArr.push(this.productForm.value);
       this.productForm.reset();
     } else {
+      this.objectArr[this.proIndex] = this.productForm.value;
     }
   }
 
