@@ -1,0 +1,19 @@
+<form [formGroup]="productForm">
+  <p><label>Name: </label>
+    <input type="text" formControlName="name" [class.is-invalid]="name.invalid && name.touched"></p>
+  <div *ngIf="name.invalid && name.touched">
+    <small *ngIf="name.errors.required">Name field should not be left blank</small>
+    <small *ngIf="name.errors.minlength">Name field should not be at least 3 characters</small>
+  </div>
+  <p><label>Price: </label>
+    <input type="number" formControlName="price">
+  </p>
+  <p><label>Details: </label>
+    <input type="text" formControlName="details">
+  </p>
+  <p><label>Quantity Available: </label>
+    <input type="number" formControlName="quantityAvailable">
+  </p>
+
+</form>
+{{ productForm.value | json }}

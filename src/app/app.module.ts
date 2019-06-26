@@ -12,6 +12,8 @@ import { SiblingComponent } from './component-communication/sibling/sibling.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { BasicCrudRestApiComponent } from './basic-crud-rest-api/basic-crud-rest-api.component';
+import { BasicFormCrudComponent } from './basic-form-crud/basic-form-crud.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { BasicCrudRestApiComponent } from './basic-crud-rest-api/basic-crud-rest
     ParentComponent,
     ChildComponent,
     SiblingComponent,
-    BasicCrudRestApiComponent
+    BasicCrudRestApiComponent,
+    BasicFormCrudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule
   ],
