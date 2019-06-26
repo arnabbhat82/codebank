@@ -1,20 +1,51 @@
-<form [formGroup]="productForm">
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
   <p><label>Name: </label>
     <input type="text" formControlName="name" [class.is-invalid]="name.invalid && name.touched"></p>
   <div *ngIf="name.invalid && name.touched">
-    <small *ngIf="name.hasError('required');">Name field should not be left blank</small>
-    <small *ngIf="name.hasError('minlength')">Name field should not be at least 3 characters</small>
+    <small *ngIf="name.hasError('required')">Name field should not be left blank</small>
+    <small *ngIf="name.hasError('minlength')">Name field should have at least 3 characters</small>
   </div>
-  {{ name.errors | json }}
   <p><label>Price: </label>
-    <input type="number" formControlName="price">
+    <input type="number" formControlName="price" [class.is-invalid]="price.invalid && price.touched">
   </p>
+  <div *ngIf="price.invalid && price.touched">
+    <small *ngIf="price.hasError('required')">Price field should not be left blank</small>
+    <small *ngIf="price.hasError('min')">Price should always be greater than zero</small>
+  </div>
   <p><label>Details: </label>
-    <input type="text" formControlName="details">
+    <input type="text" formControlName="details" [class.is-invalid]="details.invalid && details.touched">
   </p>
+  <div *ngIf="details.invalid && details.touched">
+    <small *ngIf="details.hasError('required')">Details field should not be left blank</small>
+    <small *ngIf="details.hasError('minlength')">Details field should have at least 10 characters</small>
+  </div>
   <p><label>Quantity Available: </label>
-    <input type="number" formControlName="quantityAvailable">
+    <input type="number" formControlName="quantityAvailable"
+      [class.is-invalid]="quantityAvailable.invalid && quantityAvailable.touched">
   </p>
-
+  <div *ngIf="quantityAvailable.invalid && quantityAvailable.touched">
+    <small *ngIf="quantityAvailable.hasError('required')">Quantity avaailable field should not be left blank</small>
+    <small *ngIf="quantityAvailable.hasError('min')">Quantity avaailable should always be greater than zero</small>
+  </div>
+  <button [disabled]="productForm.invalid" type="submit">Submit</button>
 </form>
 {{ productForm.value | json }}
+
+<table border="1">
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Details</th>
+    <th>Quantity</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </thead>
+  <tr *ngFor="let product of objectArr; index as i">
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+    <td>{{ product.details}}</td>
+    <td>{{ product.quantityAvailable }}</td>
+    <td><button type="button" (click)="editProduct(i)">Update</button></td>
+    <td><button type="button" (click)="deleteProduct(i)">Delete</button></td>
+  </tr>
+</table>
