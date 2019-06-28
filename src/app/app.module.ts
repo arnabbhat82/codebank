@@ -14,6 +14,7 @@ import { MaterialModule } from './material.module';
 import { BasicCrudRestApiComponent } from './basic-crud-rest-api/basic-crud-rest-api.component';
 import { BasicFormCrudComponent } from './basic-form-crud/basic-form-crud.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ArrayOperationsComponent } from './array-operations/array-operations.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChildComponent,
     SiblingComponent,
     BasicCrudRestApiComponent,
-    BasicFormCrudComponent
+    BasicFormCrudComponent,
+    ArrayOperationsComponent
   ],
   imports: [
     BrowserModule,
