@@ -2,6 +2,8 @@
   {{arrayNumbers | json}}
   <button mat-button (click)="onMap()">MAP</button>
   <button mat-button (click)="onPop()">POP</button>
+  <button mat-button (click)="onFilter()">FILTER</button>
+
 </p>
 <p>
   Map: {{newArray | json}}
@@ -9,3 +11,12 @@
 <p>
   Last value using pop: {{lastValue}}
 </p>
+<p>
+  Filter: {{canDrink | json}}
+</p>
+<p>
+  Filter: {{retailCompanies | json}}
+</p>
+<div *ngFor="let retailCompany of retailCompanies">
+  <p>{{ retailCompany.name }}</p>
+</div>
