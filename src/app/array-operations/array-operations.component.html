@@ -3,6 +3,10 @@
   <button mat-button (click)="onMap()">MAP</button>
   <button mat-button (click)="onPop()">POP</button>
   <button mat-button (click)="onFilter()">FILTER</button>
+  <button mat-button (click)="onSort()">SORT</button>
+  <button mat-button (click)="onSortAges()">SORT AGES</button>
+
+
 
 </p>
 <p>
@@ -17,6 +21,12 @@
 <p>
   Filter: {{retailCompanies | json}}
 </p>
+<p>
+  Sort Ages: {{sortAges | json}}
+</p>
 <div *ngFor="let retailCompany of retailCompanies">
   <p>{{ retailCompany.name }}</p>
+</div>
+<div *ngFor="let sortedCompany of sortedCompanies">
+  <p>{{ sortedCompany.name }} Start Date: {{ sortedCompany.start }}</p>
 </div>

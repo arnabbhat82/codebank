@@ -15,6 +15,7 @@ import { BasicCrudRestApiComponent } from './basic-crud-rest-api/basic-crud-rest
 import { BasicFormCrudComponent } from './basic-form-crud/basic-form-crud.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArrayOperationsComponent } from './array-operations/array-operations.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ArrayOperationsComponent } from './array-operations/array-operations.co
     SiblingComponent,
     BasicCrudRestApiComponent,
     BasicFormCrudComponent,
-    ArrayOperationsComponent
+    ArrayOperationsComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

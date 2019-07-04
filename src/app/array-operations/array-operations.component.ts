@@ -11,6 +11,8 @@ export class ArrayOperationsComponent implements OnInit {
   lastValue: number;
   canDrink: number[];
   retailCompanies: any;
+  sortedCompanies: any;
+  sortAges: number[];
   companies = [
     {name: 'Comapny One', category: 'Finance', start: 1982, end: 2003},
     {name: 'Comapny Two', category: 'Retail', start: 1982, end: 2008},
@@ -43,5 +45,12 @@ export class ArrayOperationsComponent implements OnInit {
   onPop() {
     const popArray = [...this.arrayNumbers];
     this.lastValue = popArray.pop();
+  }
+
+  onSort() {
+    this.sortedCompanies = this.companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+  }
+  onSortAges() {
+    this.sortAges = this.ages.sort((a, b) => a - b);
   }
 }

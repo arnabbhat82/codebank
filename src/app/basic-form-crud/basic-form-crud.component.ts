@@ -51,6 +51,7 @@ export class BasicFormCrudComponent implements OnInit {
     this.objectArr.splice(i, 1);
   }
   editProduct(i: number) {
+    this.proIndex = i;
     this.productForm.patchValue({
       name: this.objectArr[i].name,
       price: this.objectArr[i].price,
